@@ -9,6 +9,7 @@ export const fetchSocialMedia = async () => {
     const resp = await fetch(url, {
         headers: {
             Authentication: `Bearer ${userToken}`,
+            'Access-Control-Allow-Origin': 'https://izea-test-custom.vercel.app'
         }
     })
     console.log(resp);
