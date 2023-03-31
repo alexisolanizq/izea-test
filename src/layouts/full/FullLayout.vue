@@ -3,6 +3,7 @@ import { onMounted, ref, computed } from 'vue';
 import { RouterView } from 'vue-router';
 import MainView from './Main.vue';
 import { fetchUserDataByVanityName } from '@/helpers/userData';
+import { fetchSocialMedia } from '@/helpers/loadSocialMedia';
 const userData = ref({
     first_name: '',
     last_name: '',
@@ -21,6 +22,7 @@ onMounted(() => {
     fetchUserDataByVanityName(user?.meta_info?.vanity_name).then((response) => {
         console.log(response);
     });
+    fetchSocialMedia()
 });
 const getTotalFollowers = computed(() => {
     let total = 0 
