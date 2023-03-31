@@ -5,7 +5,16 @@ import { getRelationshipStatus, getGender, getScolarship, getLanguage, getPets }
 import type { userMetaData } from '@/types/common/common';
 const scroll = ref(0);
 const isLoading = ref(true);
-const userData = ref<userMetaData>({});
+const userData = ref<userMetaData>({
+    gender: '',
+    age: 0,
+    ethnicity: '',
+    relationship: '',
+    languages: '',
+    pets: '',
+    children: '',
+    scolarship: ''
+});
 const socialMedia = ref([]);
 const onscroll = () => {
     scroll.value++;
